@@ -1,33 +1,40 @@
-/*
- * =====================================================================================
- *
- *       Filename:  file_util.cpp
- *
- *    Description:  C++用のファイル入出力向けユーティリティ関数群
- *
- *        Version:  1.0
- *        Created:  2012/09/10 00時04分02秒
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Akira MIDOUCHI (am), a083747@edu.tut.ac.jp
- *   Organization:  
- *
- * =====================================================================================
+/**
+ * @file file_util.cpp
+ * @brief C++用のファイル入出力ユーティリティ
+ * @author Akira MIDOUCHI
+ * @version 0.1
+ * @date 2012-09-10
  */
+
+/* Copyright (C) 
+ * 2012 - Akira MIDOUCHI
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ * 
+ */
+
 #include "file_util.h"
 
-/* 
- * ===  FUNCTION  ======================================================================
- *  Name:  createFilenameStrings
- *  Description:  連番ファイル名を作成する関数
- *  \param numFiles 作成するファイル名の数（仕様上、現在は１万個まで）
- *  \param filename ファイル名
- *  \param path ファイル名の前につけるパス名
- *  \param delim ファイル名と連番の間に入れる区切り文字
- *  \param ext 連番の後ろにつくファイル拡張子名
- *  \param numberedFiles 作成した連番ファイル名を格納する配列
- * =====================================================================================
+/**
+ * @brief 連番ファイル名を作成する関数
+ *
+ * @param numFiles 作成するファイル名の数（仕様上、現在MAX_NUM_FILE個まで）
+ * @param filename 連番の前につけるファイル名
+ * @param path ファイル名の前につけるパス名
+ * @param delim ファイル名と連番の間に入れる区切り文字
+ * @param ext 連番の後ろにつくファイル拡張子名
+ * @param numberedFiles 作成した連番ファイル名を格納する配列
  */
 void createSerialNumberedFilenames (int numFiles, std::string filename, std::string path, std::string delim, std::string ext, std::vector<std::string> &numberedFiles)
 {
@@ -49,4 +56,4 @@ void createSerialNumberedFilenames (int numFiles, std::string filename, std::str
 	}
 
 	return;
-}		/* -----  end of function createSerialNumberedFilenames  ----- */
+}
