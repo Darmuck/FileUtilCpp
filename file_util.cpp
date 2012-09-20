@@ -38,22 +38,22 @@
  */
 void createSerialNumberedFilenames (int numFiles, std::string filename, std::string path, std::string delim, std::string ext, std::vector<std::string> &numberedFiles)
 {
-	// 配列の初期化
-	numberedFiles.clear();
-
-	// ファイル数のバリデーション
-	if(numFiles <= 0 || numFiles > MAX_FILE_NUM){
-		std::cerr << "Incorrect number of files. It should be 0 < numFiles <= MAX_NUM_FILE"<< std::endl;
-		return;
-	}
-
-	for(int i = 0; i < numFiles; ++i){
-		// ファイルへのフルパス作成
-		std::stringstream fileFullPath;
-		fileFullPath << path << filename << delim << std::setw(4) << std::setfill('0') << i << ext;
-		// 配列へ格納
-		numberedFiles.push_back(fileFullPath.str());
-	}
-
-	return;
+    // 配列の初期化
+    // numberedFiles.clear();
+    
+    // ファイル数のバリデーション
+    if(numFiles <= 0 || numFiles > MAX_FILE_NUM){
+        std::cerr << "Incorrect number of files. It should be 0 < numFiles <= MAX_NUM_FILE"<< std::endl;
+        return;
+    }
+    
+    for(int i = 0; i < numFiles; ++i){
+        // ファイルへのフルパス作成
+        std::stringstream fileFullPath;
+        fileFullPath << path << filename << delim << std::setw(4) << std::setfill('0') << i << "." << ext;
+        // 配列へ格納
+        numberedFiles.push_back(fileFullPath.str());
+    }
+    
+    return;
 }
